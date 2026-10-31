@@ -69,7 +69,7 @@ async function createOgImage() {
         <text x="245" y="104" font-family="serif" font-size="14" fill="#b87b22" text-anchor="middle">✦ ✦ ✦</text>
 
         <!-- Couple Names -->
-        <text x="245" y="182" font-family="Georgia, serif" font-size="58" fill="#331706" font-weight="bold" text-anchor="middle" letter-spacing="1">Tanya &amp; Abhishek</text>
+        <text x="245" y="182" font-family="Georgia, serif" font-size="58" fill="#331706" font-weight="bold" text-anchor="middle" letter-spacing="1">Abhishek &amp; Tanya</text>
 
         <!-- Invitation Script -->
         <text x="245" y="226" font-family="'Brush Script MT', cursive, Georgia, serif" font-size="26" font-style="italic" fill="#854d1f" text-anchor="middle">invite you to celebrate their wedding</text>
@@ -83,21 +83,24 @@ async function createOgImage() {
         <text x="245" y="376" font-family="Georgia, serif" font-size="13" letter-spacing="2" fill="#794c25" text-anchor="middle">UTTARAKHAND, INDIA</text>
 
         <!-- Open Invitation CTA Tag -->
-        <rect x="120" y=\"412\" width="250" height="36" rx="18" fill="#4f5722"/>
+        <rect x="120" y="412" width="250" height="36" rx="18" fill="#4f5722"/>
         <text x="245" y="435" font-family="Georgia, serif" font-size="12" font-weight="bold" letter-spacing="2" fill="#ffffff" text-anchor="middle">VIEW INVITATION →</text>
       </g>
     </svg>
   `);
 
   // Generate lossless PNG with max compression
-  await sharp(svgOverlay)
+  const pngBuffer = await sharp(svgOverlay)
     .png({
       compressionLevel: 9, // maximum lossless compression
       adaptiveFiltering: true
     })
-    .toFile('public/assets/og-tanya-abhishek.png');
+    .toBuffer();
 
-  const info = await sharp('public/assets/og-tanya-abhishek.png').metadata();
+  await sharp(pngBuffer).toFile('public/assets/og-abhishek-tanya.png');
+  await sharp(pngBuffer).toFile('public/assets/og-tanya-abhishek.png');
+
+  const info = await sharp('public/assets/og-abhishek-tanya.png').metadata();
   console.log('OG image created successfully:', info.width, 'x', info.height, info.format, info.size, 'bytes');
 }
 

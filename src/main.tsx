@@ -121,15 +121,15 @@ function addCalendar(){
     'BEGIN:VEVENT',
     'DTSTART:20261119T033000Z',
     'DTEND:20261120T123000Z',
-    'SUMMARY:Tanya & Abhishek — Wedding Celebration',
+    'SUMMARY:Abhishek & Tanya — Wedding Celebration',
     'LOCATION:Pebbles Resort, Neelkanth Road, Rattapani, Rishikesh, Uttarakhand',
-    'DESCRIPTION:Celebrate the wedding ceremonies of Tanya Saini & Abhishek Saini in Rishikesh.',
+    'DESCRIPTION:Celebrate the wedding ceremonies of Abhishek Saini & Tanya Saini in Rishikesh.',
     'END:VEVENT',
     'END:VCALENDAR'
   ].join('\r\n');
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([body],{type:'text/calendar'}));
-  a.download='tanya-abhishek-wedding.ics';
+  a.download='abhishek-tanya-wedding.ics';
   a.click();
   URL.revokeObjectURL(a.href);
 }
@@ -425,7 +425,7 @@ function RoyalVideoWelcome({onEnter}:{onEnter:()=>void}){
       className={`royal-welcome ${isPlaying ? 'video-active' : ''} ${isFinishing ? 'is-finishing' : ''}`}
       role="dialog"
       aria-modal="true"
-      aria-label="Tanya & Abhishek royal wedding invitation entry"
+      aria-label="Abhishek & Tanya royal wedding invitation entry"
     >
       {/* Background Video Element: Plays vide.mp4 on first click */}
       <video
@@ -455,7 +455,7 @@ function RoyalVideoWelcome({onEnter}:{onEnter:()=>void}){
           {/* Action Button: Lighter font colour & not bold */}
           <button
             type="button"
-            aria-label="Open Tanya and Abhishek's wedding invitation"
+            aria-label="Open Abhishek and Tanya's wedding invitation"
             className="open-invitation-btn"
             onClick={handleOpenClick}
           >
@@ -474,7 +474,7 @@ function RoyalVideoWelcome({onEnter}:{onEnter:()=>void}){
               <i /><span>✦</span><i />
             </div>
             <h2 className="gate-names-text">
-              Tanya <i>&</i> Abhishek
+              Abhishek <i>&</i> Tanya
             </h2>
             <p className="gate-names-details">
               19 & 20 NOVEMBER 2026 · RISHIKESH
@@ -520,10 +520,10 @@ function FamilyBlessingCard(){
             CELEBRATE THE WEDDING OF
           </p>
 
-          {/* Bride Name in elegant cursive script calligraphy */}
+          {/* Groom Name in elegant cursive script calligraphy */}
           <div className="blessing-person">
-            <h3 className="blessing-script-name">Tanya</h3>
-            <p className="blessing-parents">(D/O Mrs. Anita &amp; Mr. Pramod Kumar Saini)</p>
+            <h3 className="blessing-script-name">Abhishek</h3>
+            <p className="blessing-parents">(S/O Mrs. Sunita Devi &amp; Mr. Raj Kumar Saini)</p>
           </div>
 
           {/* Middle Lotus Divider with 'WITH' */}
@@ -536,10 +536,10 @@ function FamilyBlessingCard(){
             <p className="blessing-with">WITH</p>
           </div>
 
-          {/* Groom Name in elegant cursive script calligraphy */}
+          {/* Bride Name in elegant cursive script calligraphy */}
           <div className="blessing-person">
-            <h3 className="blessing-script-name">Abhishek</h3>
-            <p className="blessing-parents">(S/O Mrs. Sunita Devi &amp; Mr. Raj Kumar Saini)</p>
+            <h3 className="blessing-script-name">Tanya</h3>
+            <p className="blessing-parents">(D/O Mrs. Anita &amp; Mr. Pramod Kumar Saini)</p>
           </div>
 
           {/* Bottom Divider with Date & Venue */}
@@ -574,7 +574,7 @@ function LastPageCelebration(){
       <div className="lux-art-canvas">
         <img
           src="/assets/last-page-composite.jpg"
-          alt="We cannot wait to celebrate with you - Tanya & Abhishek"
+          alt="We cannot wait to celebrate with you - Abhishek & Tanya"
           className="lux-art-bg-img"
           loading="lazy"
         />
@@ -828,7 +828,7 @@ function App(){
               delay: 0.35
             }}
           >
-            Tanya{' '}
+            Abhishek{' '}
             <motion.span
               className="names-amp"
               initial={{ scale: 0, rotate: -25 }}
@@ -837,7 +837,7 @@ function App(){
             >
               &
             </motion.span>{' '}
-            Abhishek
+            Tanya
           </motion.h1>
 
           <p className="hero-invite-line">invite you to celebrate our wedding</p>
@@ -867,7 +867,7 @@ function App(){
           <div className="hero-couple-halo" />
           <img
             src="/assets/lifting-couple.png"
-            alt="Tanya & Abhishek in celebratory pose"
+            alt="Abhishek & Tanya in celebratory pose"
             className="hero-couple-png"
           />
         </motion.div>
@@ -914,7 +914,7 @@ function App(){
           <img
             src="/assets/before-forever-begins.jpg"
             loading="lazy"
-            alt="Before forever begins - Tanya and Abhishek wedding celebration"
+            alt="Before forever begins - Abhishek and Tanya wedding celebration"
             className="ceremony-artwork"
           />
 
